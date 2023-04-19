@@ -12,6 +12,7 @@ const common_1 = require("@nestjs/common");
 const cqrs_1 = require("@nestjs/cqrs");
 const eventstore_1 = require("./eventstore");
 const eventsourcing_providers_1 = require("./eventsourcing.providers");
+const constants_1 = require("./constants");
 let EventSourcingModule = EventSourcingModule_1 = class EventSourcingModule {
     static forRoot(options) {
         return {
@@ -22,7 +23,27 @@ let EventSourcingModule = EventSourcingModule_1 = class EventSourcingModule {
                     useValue: new eventstore_1.EventStore(options.mongoURL),
                 },
             ],
-            imports: options.inject ? options.inject : [],
+            exports: [eventstore_1.EventStore],
+            global: true,
+        };
+    }
+    static forRootAsync(options) {
+        return {
+            module: EventSourcingModule_1,
+            providers: [
+                {
+                    provide: constants_1.EVENT_SOURCING_OPTIONS,
+                    useFactory: options.useFactory,
+                    inject: options.inject || [],
+                },
+                {
+                    provide: eventstore_1.EventStore,
+                    useFactory: (options) => {
+                        return new eventstore_1.EventStore(options.mongoURL);
+                    },
+                    inject: [constants_1.EVENT_SOURCING_OPTIONS],
+                },
+            ],
             exports: [eventstore_1.EventStore],
             global: true,
         };
