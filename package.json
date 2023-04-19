@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@types/node": "^13.5.0",
-    "eventstore": "^1.15.2",
+    "eventstore": "https://github.com/y9yk/node-eventstore.git#develop",
     "mongodb": "^5.3.0"
   },
   "devDependencies": {
