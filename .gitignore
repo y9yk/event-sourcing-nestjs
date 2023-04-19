@@ -1,5 +1,6 @@
 # compiled output
-/dist
+# to use this repository library, dist dir must be included
+# /dist
 /node_modules
 
 # Logs
