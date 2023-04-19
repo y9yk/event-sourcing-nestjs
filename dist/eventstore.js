@@ -31,7 +31,6 @@ class EventStore {
         });
         this.eventstore.init(err => {
             if (err) {
-                console.log(err);
                 throw err;
             }
             this.eventStoreLaunched = true;
