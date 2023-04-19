@@ -7,7 +7,6 @@ export class EventStore {
   private eventStoreLaunched = false;
 
   constructor(mongoURL: string) {
-    console.log(mongoURL);
     let ssl = false;
 
     const parsed = url.parse(mongoURL, true);
@@ -29,6 +28,7 @@ export class EventStore {
     });
     this.eventstore.init(err => {
       if (err) {
+        console.log(err);
         throw err;
       }
       this.eventStoreLaunched = true;
