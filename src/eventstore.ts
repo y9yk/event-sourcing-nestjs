@@ -7,6 +7,7 @@ export class EventStore {
   private eventStoreLaunched = false;
 
   constructor(mongoURL: string) {
+    console.log(mongoURL);
     let ssl = false;
 
     const parsed = url.parse(mongoURL, true);
