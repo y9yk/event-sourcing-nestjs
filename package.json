@@ -16,7 +16,7 @@
   "dependencies": {
     "@types/node": "^13.5.0",
     "eventstore": "^1.15.2",
-    "mongodb": "^3.5.2"
+    "mongodb": "^5.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -36,7 +36,7 @@
     "rxjs": "^6.5.4",
     "ts-node": "^8.6.2",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^3.8.3"
+    "typescript": "^5.0.4"
   },
   "repository": {
     "type": "git",
@@ -54,10 +54,5 @@
   "bugs": {
     "url": "https://github.com/ArkerLabs/event-sourcing-nestjs/issues"
   },
-  "homepage": "https://github.com/ArkerLabs/event-sourcing-nestjs#readme",
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
+  "homepage": "https://github.com/ArkerLabs/event-sourcing-nestjs#readme"
 }
