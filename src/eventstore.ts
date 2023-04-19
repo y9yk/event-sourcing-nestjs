@@ -11,7 +11,11 @@ export class EventStore {
 
     const parsed = url.parse(mongoURL, true);
 
-    if (parsed.query && parsed.query.ssl !== undefined && parsed.query.ssl === 'true') {
+    if (
+      parsed.query &&
+      parsed.query.ssl !== undefined &&
+      parsed.query.ssl === 'true'
+    ) {
       ssl = true;
     }
 
