@@ -15,6 +15,7 @@ export class EventSourcingModule {
           useValue: new EventStore(options.mongoURL),
         },
       ],
+      imports: options.inject ? options.inject : [],
       exports: [EventStore],
       global: true,
     };

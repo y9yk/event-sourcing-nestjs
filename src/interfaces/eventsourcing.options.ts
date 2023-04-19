@@ -1,3 +1,4 @@
 export interface EventSourcingOptions {
-    mongoURL: string;
+  mongoURL: string;
+  inject?: any[];
 }
